@@ -89,11 +89,12 @@ const {
 const topHeaders = _$.bySelectorAll(`${topContentSelector} h4`);
 const topParagraphs = _$.bySelectorAll(`${topContentSelector} p`);
 
+topHeaders[0].innerText = featuresH4;
+topParagraphs[0].innerText = featuresContent;
+
 topHeaders[1].innerText = aboutH4;
 topParagraphs[1].innerText = aboutContent;
 
-topHeaders[0].innerText = featuresH4;
-topParagraphs[0].innerText = featuresContent;
 // Main-Content - Top-Section -- End
 
 // Main-Content - Middle-Image -- Start
