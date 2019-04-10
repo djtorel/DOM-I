@@ -72,7 +72,26 @@ _$.bySelector('#logo-img').src = logoImgSrcValue;
 
 // CTA Section -- Start
 const { h1: ctaH1, button: ctaButton, 'img-src': ctaImg } = siteContent.cta;
-_$.bySelector('.cta-text > h1').innerText = ctaH1;
+_$.bySelector('.cta-text > h1').innerHTML = ctaH1.split(' ').join('<br />');
 _$.bySelector('.cta-text > button').innerText = ctaButton;
 _$.bySelector('#cta-img').src = ctaImg;
 // CTA Section -- End
+
+// Main-Content - Top-Section -- Start
+const topContentSelector = '.top-content .text-content >';
+const {
+  'about-content': aboutContent,
+  'about-h4': aboutH4,
+  'features-content': featuresContent,
+  'features-h4': featuresH4,
+} = siteContent['main-content'];
+
+const topHeaders = _$.bySelectorAll(`${topContentSelector} h4`);
+const topParagraphs = _$.bySelectorAll(`${topContentSelector} p`);
+
+topHeaders[1].innerText = aboutH4;
+topParagraphs[1].innerText = aboutContent;
+
+topHeaders[0].innerText = featuresH4;
+topParagraphs[0].innerText = featuresContent;
+// Main-Content - Top-Section -- End
