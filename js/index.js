@@ -95,3 +95,8 @@ topParagraphs[1].innerText = aboutContent;
 topHeaders[0].innerText = featuresH4;
 topParagraphs[0].innerText = featuresContent;
 // Main-Content - Top-Section -- End
+
+// Main-Content - Middle-Image -- Start
+_$.bySelector('#middle-img').src =
+  siteContent['main-content']['middle-img-src'];
+// Main-Content - Middle-Image -- End
