@@ -61,7 +61,7 @@ const _$ = {
 // Nav Section -- Start
 const navLinkValues = Object.values(siteContent.nav);
 const logoImgSrcValue = navLinkValues.pop();
-const navLinks = _$.mapAll('nav > a', node => node);
+const navLinks = _$.bySelectorAll('nav > a');
 
 navLinkValues.forEach((value, index) => {
   navLinks[index].innerText = value;
@@ -71,18 +71,8 @@ _$.bySelector('#logo-img').src = logoImgSrcValue;
 // Nav Section -- End
 
 // CTA Section -- Start
-for (let key in siteContent.cta) {
-  const value = siteContent.cta[key];
-  switch (key) {
-    case 'h1':
-      _$.bySelector('.cta-text > h1').innerText = value;
-      break;
-    case 'button':
-      _$.bySelector('.cta-text > button').innerText = value;
-      break;
-    case 'img-src':
-      _$.bySelector('#cta-img').src = value;
-      break;
-  }
-}
+const { h1: ctaH1, button: ctaButton, 'img-src': ctaImg } = siteContent.cta;
+_$.bySelector('.cta-text > h1').innerText = ctaH1;
+_$.bySelector('.cta-text > button').innerText = ctaButton;
+_$.bySelector('#cta-img').src = ctaImg;
 // CTA Section -- End
