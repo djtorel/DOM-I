@@ -140,3 +140,8 @@ contactParagraphs[0].innerHTML = addressHTML;
 contactParagraphs[1].innerText = phone;
 contactParagraphs[2].innerText = email;
 // Contact-Section -- End
+
+// Footer-Section -- Start
+const { copyright } = siteContent.footer;
+_$.bySelector('footer > p').innerText = copyright;
+// Footer-Section -- End
