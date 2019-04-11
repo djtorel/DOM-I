@@ -67,6 +67,26 @@ navLinkValues.forEach((value, index) => {
   navLinks[index].innerText = value;
 });
 
+// Task-3-Section -- Start
+navLinks.forEach(link => {
+  link.style = 'color: green;';
+});
+const nav = _$.bySelector('nav');
+
+const newNavItemOne = document.createElement('a');
+newNavItemOne.href = '#';
+newNavItemOne.innerText = 'Foo';
+newNavItemOne.style = 'color: green;';
+
+const newNavItemTwo = document.createElement('a');
+newNavItemTwo.href = '#';
+newNavItemTwo.innerText = 'Bar';
+newNavItemTwo.style = 'color: green;';
+
+nav.appendChild(newNavItemOne);
+nav.prepend(newNavItemTwo);
+// Task-3-Section -- End
+
 _$.bySelector('#logo-img').src = logoImgSrcValue;
 // Nav Section -- End
 
