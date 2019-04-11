@@ -165,3 +165,18 @@ contactParagraphs[2].innerText = email;
 const { copyright } = siteContent.footer;
 _$.bySelector('footer > p').innerText = copyright;
 // Footer-Section -- End
+
+// Stretch-Section -- Start
+_$.bySelector('body').style = 'background-color: #a5a5a5';
+_$.bySelector('button').style.borderRadius = '.5rem';
+_$.bySelector('button').style.backgroundColor = 'dodgerblue';
+_$.mapAll('nav > a', link => {
+  const originalColor = link.style.color;
+  link.addEventListener('mouseenter', () => {
+    link.style.color = 'blue';
+  });
+  link.addEventListener('mouseleave', () => {
+    link.style.color = originalColor;
+  });
+});
+// Stretch-Section -- End
