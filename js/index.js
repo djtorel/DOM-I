@@ -94,10 +94,33 @@ topParagraphs[0].innerText = featuresContent;
 
 topHeaders[1].innerText = aboutH4;
 topParagraphs[1].innerText = aboutContent;
-
 // Main-Content - Top-Section -- End
 
 // Main-Content - Middle-Image -- Start
 _$.bySelector('#middle-img').src =
   siteContent['main-content']['middle-img-src'];
 // Main-Content - Middle-Image -- End
+
+// Main-Content - Bottom-Section -- Start
+const {
+  'services-h4': servicesH4,
+  'services-content': servicesContent,
+  'product-h4': productH4,
+  'product-content': productContent,
+  'vision-h4': visionH4,
+  'vision-content': visionContent,
+} = siteContent['main-content'];
+const bottomContentSelector = '.bottom-content .text-content >';
+
+const bottomHeaders = _$.bySelectorAll(`${bottomContentSelector} h4`);
+const bottomParagraphs = _$.bySelectorAll(`${bottomContentSelector} p`);
+
+bottomHeaders[0].innerText = servicesH4;
+bottomParagraphs[0].innerText = servicesContent;
+
+bottomHeaders[1].innerText = productH4;
+bottomParagraphs[1].innerText = productContent;
+
+bottomHeaders[2].innerText = visionH4;
+bottomParagraphs[2].innerText = visionContent;
+// Main-Content - Bottom-Section -- End
