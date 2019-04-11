@@ -124,3 +124,19 @@ bottomParagraphs[1].innerText = productContent;
 bottomHeaders[2].innerText = visionH4;
 bottomParagraphs[2].innerText = visionContent;
 // Main-Content - Bottom-Section -- End
+
+// Contact-Section -- Start
+const { 'contact-h4': contactH4, address, phone, email } = siteContent.contact;
+const contactSelector = 'section.contact >';
+const contactHeader = _$.bySelector(`${contactSelector} h4`);
+const contactParagraphs = _$.bySelectorAll(`${contactSelector} p`);
+
+const addressFirstLine = address.substr(0, address.indexOf('Somewhere') - 1);
+const addressSecondLine = address.substr(address.indexOf('Somewhere'));
+const addressHTML = `${addressFirstLine}<br />${addressSecondLine}`;
+
+contactHeader.innerText = contactH4;
+contactParagraphs[0].innerHTML = addressHTML;
+contactParagraphs[1].innerText = phone;
+contactParagraphs[2].innerText = email;
+// Contact-Section -- End
